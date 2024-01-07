@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 def add_tuple(tuple_a=(), tuple_b=()):
-    if (not tuple_a) and (not tuple_b):
-        return None
-    res = (tuple_a[0] + tuple_b[0], tuple_a[1] + tuple_b[1])
-    return (res)
+    x1 = tuple_a[0] if len(tuple_a) > 0 else 0
+    x2 = tuple_a[1] if len(tuple_a) > 1 else 0
+    x3 = tuple_b[0] if len(tuple_b) > 0 else 0
+    x4 = tuple_b[1] if len(tuple_b) > 1 else 0
+    return (x1 + x3, x2 + x4)
