@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" Square doc """
+
+
 class Square:
     """ This is a square class """
 
@@ -22,4 +25,4 @@ class Square:
         Returns:
             the calculated area
         """
-        return (self.__size)**2
+        return (self.__size)*(self.__size))
