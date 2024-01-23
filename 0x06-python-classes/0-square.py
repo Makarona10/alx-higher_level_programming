@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-""" Square module """
-
+""" Square doc """
 
 class Square:
-    """ Declares a square class """
-
+    """ This is a square class """
     pass
