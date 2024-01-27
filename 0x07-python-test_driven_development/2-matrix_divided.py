@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""matrix_divided module"""
+
+
 def matrix_divided(matrix, div):
     """
         Divides all matrix elements by a number
@@ -9,13 +12,13 @@ def matrix_divided(matrix, div):
 
         Return: A new list of divided numbers
     """
-    x = len(matrix[0])
-    z = 0
-    new = [[] for _ in range(len(matrix))]
     if type(div) != int and type(div) != float:
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
+    x = len(matrix[0])
+    z = 0
+    new = [[] for _ in range(len(matrix))]
     for row in matrix:
         n = 0
         for element in row:

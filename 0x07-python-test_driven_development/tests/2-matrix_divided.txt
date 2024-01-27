@@ -1,0 +1,45 @@
+The ``2-matrix_divided`` Module
+===============================
+
+Using the ``matrix_divided`` function
+=====================================
+
+::
+Importing the module->
+    >>>matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Start the test.
+
+::
+Checks for the documentation of the module->
+
+    >>>doc_size = __import__('2-matrix_divided').__doc__
+    >>>len(doc_size) > 5
+    True
+
+-----------------------------------------------------
+::
+Checks for the function documentation->
+
+    >>>func_doc = matrix_divided.__doc__
+    >>>len(func_doc) > 5
+    True
+
+-----------------------------------------------------
+::
+Tests in case the 2D matrix is empty->
+
+    >>>matrix_divided([[]], 1)
+    >>>[[]]
+-----------------------------------------------------
+::
+Test if the list has a string->
+
+    >>>matrix_divided([[1, 5], "damn"], 1)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+-----------------------------------------------------
+::
+Tests if the size of internal lists wasn't equal->
+
