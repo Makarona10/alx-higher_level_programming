@@ -5,11 +5,13 @@
 class Rectangle:
     """ This is a rectangle class """    
    
+    count = 0
     def __init__(self, width=0, height=0):
         """initialize a rectangle object with a height 
         and width"""
         self.width = width
         self.height = height
+        Rectangle.count += 1
 
     @property
     def width(self):
@@ -66,4 +68,6 @@ class Rectangle:
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
+        """deletes an instance"""
+        Rectangle.count -= 1
         print("Bye rectangle...")
