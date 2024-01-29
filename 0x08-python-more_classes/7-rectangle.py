@@ -60,7 +60,7 @@ class Rectangle:
             return ""
         rect = ""
         for i in range(self.__height):
-            rect = rect + (self.__width) * str(Rectangle.print_symbol)
+            rect = rect + (self.__width) * str(self.print_symbol)
             if i < self.__height - 1:
                 rect = rect + "\n"
         return rect
