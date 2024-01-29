@@ -5,21 +5,36 @@
 
 def text_indentation(text):
     """
-        prints a text with 2 new lines after each of these characters: ., ? and :
+        prints a text with 2 new lines after each of these characters: '.', '?' and ':'
 
         args:
             text: The text that will be printed
     """
-    if type(text) != str:
+    if type(text) is not str:
         raise TypeError("text must be a string")
-    newLine = False
-    for i in text:
-        if newLine == True and text[idx + 1] == " ":
-            newLine = False
-            continue
-        if i == '?' or i == ':' or i == '.':
-            print("\n")
-            idx = text.index(i)
-            newLine = True
-        else:
-            print(i, end="")
+
+    split_text_list = list()
+    new_text = list()
+    letters_list = list()
+
+    for character in text:
+        letters_list.append(character)
+        if character in ['.', '?', ':']:
+            split_text_list.append(''.join(letters_list))
+            letters_list.clear()
+
+    if letters_list:
+        split_text_list.append("".join(letters_list))
+    letters_list.clear()
+
+    for sentence in split_text_list:
+        new_text.append(sentence.strip(' '))
+    split_text_list.clear()
+
+    for character in new_text[-1]:
+        if character in ['.', '?', ':']:
+            print("\n\n".join(new_text))
+            print()
+            return
+
+    print("\n\n".join(new_text), end='')
