@@ -60,11 +60,11 @@ class Rectangle:
             return ""
         rect = ""
         for i in range(self.__height):
-            for n in range(self.__width):
-                rect = rect + str(self.print_symbol)
+            rect = rect + (self.__width) * "#"
             if i < self.__height - 1:
                 rect = rect + "\n"
         return rect
+    
     def __repr__(self):
         """represent the rectangle in a formal way"""
         return f"Rectangle({self.__width}, {self.__height})"
