@@ -61,6 +61,3 @@ class Rectangle:
             if i < self.__height - 1:
                 rect = rect + "\n"
         return rect
-
-r = Rectangle()
-print(str(r))
