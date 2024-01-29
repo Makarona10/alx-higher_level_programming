@@ -1,8 +1,8 @@
 import unittest
-matrix_divided = __import__('2-matrix_divided').matrix_divided
+print_square = __import__('4-print_square').print_square
 
 class Testy(unittest.TestCase):
     def test(self):
         self.assertEqual(1, 1,"It's not ok")
 
-matrix_divided([[1, 5], "damn"], 1)
+print_square()
