@@ -1,20 +1,23 @@
 #!/usr/bin/python3
-"""add item module"""
+"""
+script to save and load
+"""
 from sys import argv
-save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 
-fname = 'add_item.json'
-mlist = []
+filename = 'add_item.json'
+my_list = []
 try:
-    mlist = load_from_json_file(fname)
+    my_list = load_from_json_file(filename)
 except Exception:
-    save_to_json_file(mlist, fname)
+    save_to_json_file(my_list, filename)
 
-if len(argv) > 1:
-    for i in range(1, len(argv)):
-        mlist.append(argv[i])
+arg_len = len(argv)
 
-    save_to_json_file(mlist, fname)
+if arg_len > 1:
+    for i in range(1, arg_len):
+        my_list.append(argv[i])
 
+    save_to_json_file(my_list, filename)
