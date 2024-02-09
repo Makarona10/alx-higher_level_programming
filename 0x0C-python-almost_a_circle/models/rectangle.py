@@ -41,7 +41,11 @@ class Rectangle(Base):
             if self.__width == 0 or self.__height == 0:
                 print()
             else:
+                for x in range (self.__y):
+                    print()
                 for i in range (self.__height):
+                    for y in range (self.__x):
+                        print(" ", end="")
                     for m in range (self.__width):
                         print("#", end="")
                     print()
@@ -49,4 +53,4 @@ class Rectangle(Base):
         def __str__(self):
             """Returns informal representation of a rectangle"""
             return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
-        
+
