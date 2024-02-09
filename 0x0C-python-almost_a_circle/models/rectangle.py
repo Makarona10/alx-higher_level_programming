@@ -54,15 +54,29 @@ class Rectangle(Base):
         """Returns informal representation of a rectangle"""
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
 
-    def update(self, *args):
-        if args[0]:
-            self.id = args[0]
-        if args[1]:
-            self.__width = args[1]
-        if args[2]:
-            self.__height = args[2]
-        if args[3]:
-            self.__X = args[3]
-        if args[4]:
-            self.__y = args[4]
-        
+    def update(self, *args, **kwargs):
+        """Updates the attributes of a rectangle"""
+        if len(args) != 0:
+            for i in range (len(args)):
+                if i == 0:
+                    self.id = args[i]
+                if i == 1:
+                    self.__width = args[i]
+                if i == 2:
+                    self.__height = args[i]
+                if i == 3:
+                    self.__X = args[i]
+                if i == 4:
+                    self.__y = args[i]
+        else:
+            for n in kwargs.keys():
+                if n == "id":
+                    self.id = kwargs['id']
+                if n == "width":
+                    self.__width = kwargs['width']
+                if n == "height":
+                    self.__height = kwargs['height']
+                if n == "x":
+                    self.__x = kwargs['x']
+                if n == "y":
+                    self.__y = kwargs['y']
