@@ -27,56 +27,57 @@ class Rectangle(Base):
         if y < 0:
             raise ValueError("y must be >= 0")
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     def area(self):
-            """Calculates the area of a rectangle"""
-            return self.__height * self.__width
-        
+        """Calculates the area of a rectangle"""
+        return self.height * self.width
+
     def display(self):
         """prints in stdout the Rectangle instance"""
-        if self.__width == 0 or self.__height == 0:
-                print()
+        if self.width == 0 or self.height == 0:
+            print()
         else:
-            for x in range (self.__y):
+            for x in range(self.y):
                 print()
-            for i in range (self.__height):
-                for y in range (self.__x):
+            for i in range(self.height):
+                for y in range(self.x):
                     print(" ", end="")
-                for m in range (self.__width):
+                for m in range(self.width):
                     print("#", end="")
                 print()
-        
+
     def __str__(self):
         """Returns informal representation of a rectangle"""
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y}"
+                f" - {self.width}/{self.height}")
 
     def update(self, *args, **kwargs):
         """Updates the attributes of a rectangle"""
         if len(args) != 0:
-            for i in range (len(args)):
+            for i in range(len(args)):
                 if i == 0:
                     self.id = args[i]
                 if i == 1:
-                    self.__width = args[i]
+                    self.width = args[i]
                 if i == 2:
-                    self.__height = args[i]
+                    self.height = args[i]
                 if i == 3:
-                    self.__X = args[i]
+                    self.x = args[i]
                 if i == 4:
-                    self.__y = args[i]
+                    self.y = args[i]
         else:
             for n in kwargs.keys():
                 if n == "id":
                     self.id = kwargs['id']
                 if n == "width":
-                    self.__width = kwargs['width']
+                    self.width = kwargs['width']
                 if n == "height":
-                    self.__height = kwargs['height']
+                    self.height = kwargs['height']
                 if n == "x":
-                    self.__x = kwargs['x']
+                    self.x = kwargs['x']
                 if n == "y":
-                    self.__y = kwargs['y']
+                    self.y = kwargs['y']
