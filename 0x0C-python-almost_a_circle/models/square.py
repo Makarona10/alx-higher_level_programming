@@ -17,3 +17,28 @@ class Square(Rectangle):
         """returns representation of the rectangle"""
         return (f"[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y}"
                 f" - {self.width}")
+
+    @property
+    def size(self):
+        """The getter of a square size"""
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """The square size setter"""
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be > 0")
+        self.width = value
+        self.height = value
+
+    def update(self, *args, **kwargs):
+        """Updates the attributes of a rectangle"""
+        if len(args) != 0:
+            attrs = ("id", "size", "x", "y")
+            for i in range(len(args)):
+                setattr(self, attrs[i], args[i])
+        else:
+            for k, val in kwargs.items():
+                setattr(self, k, val)
