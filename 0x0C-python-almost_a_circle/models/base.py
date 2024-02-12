@@ -16,6 +16,13 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    def validator(self, var, val):
+        """check on the value of a variable"""
+        if type(val) is not int:
+            raise TypeError('{} must be an integer'.format(var))
+        if val <= 0:
+            raise ValueError('{} must be > 0'.format(var))
+        
     @staticmethod
     def to_json_string(list_dictionaries):
         """returns the JSON string representation of list_dictionaries"""
