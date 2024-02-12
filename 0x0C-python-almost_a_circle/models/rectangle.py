@@ -13,8 +13,8 @@ class Rectangle(Base):
         super().__init__(id)
         self.validator("width", width)
         self.validator("height", height)
-        self.validator("x", x)
-        self.validator("y", y)
+        self.xy_validator("x", x)
+        self.xy_validator("y", y)
         self.width = width
         self.height = height
         self.x = x
@@ -50,7 +50,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """x setter method"""
-        self.validator("x", value)
+        self.xy_validator("x", value)
         self.__x = value
 
     @property
@@ -61,7 +61,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """y setter method"""
-        self.validator("y", value)
+        self.xy_validator("y", value)
         self.__y = value
 
     def area(self):
