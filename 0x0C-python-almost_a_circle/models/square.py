@@ -2,7 +2,7 @@
 """The square module"""
 
 
-Rectangle = __import__("rectangle").Rectangle
+from models.Rectangle import Rectangle
 
 
 class Square(Rectangle):
